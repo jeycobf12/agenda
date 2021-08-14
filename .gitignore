@@ -1,18 +1,32 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
 
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+int main(){
+    system(¨color e6¨);
+    int codigo, telefono;
+    char nombre[30],res;
+    File *X;
+    X=fopen (¨agenda.dat¨,¨¨r+¨);
+    if(X==NULL){
+        printf (¨/n/n/tERROR de apertura del archivo¨);
+        getch();
+        exit(0);
+   }else{
+        printf(¨/n/n/tapertura de la agenda exitosa¨);
+   }
+   printf(¨/n/t/t---------------------------------¨);
+   printf(¨/n/n/tAgenda de contacto¨);
+   printf(¨/n/t/t---------------------------------¨);
+  
+   while(!feod(X)){
+       fscanf(X,¨%d¨;&codigo);
+       fscanf(X,¨%s¨;&nombre);
+       fscanf(X,¨%d¨;&telefono);
+       printf(¨/n/t %d/t/t&s/t/t%d¨,codigo,nombre,telefono);
+   }
+   printf(¨/n/n/tFin del recorido de su agenda....¨);
+   
+   getch();
+   
+}
